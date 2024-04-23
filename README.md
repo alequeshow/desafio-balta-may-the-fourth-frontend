@@ -10,13 +10,12 @@ Desenvolvimento de um App Web completo, fornecendo recursos como criação, leit
 
 ## Participantes
 ### 🚀 Capitão
-[NOME e GITHUB]
+[Alex Almeida (alequeshow)](https://github.com/alequeshow)
 
 ### 💂‍♀️ Batalhão
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
-* [NOME e GITHUB]
+* [Filipe Augusto (filipe-augusto)](https://github.com/filipe-augusto)
+* [Augusto Albuquerque (dhelp)](https://github.com/dhelp)
+* [Gustavo Gonçalves (gustavogonc)](https://github.com/gustavogonc)
 
 ## ⚙️ Tecnologias
 * C# 12
@@ -34,7 +33,19 @@ Desenvolvimento de um App Web completo, fornecendo recursos como criação, leit
 * Muito conhecimento técnico
 
 ## 🧪 Como testar o projeto
-[DESCREVER COMO EXECUTAR O PROJETO]
+
+### Mockserver
+
+Para executar o projeto 100% local sem dependencias externas, utilizamos mockserver para simular as requisições externas
+
+
+#### Mockserver & Docker
+
+```
+docker pull mockserver/mockserver
+
+docker run -d --name mockserver --rm -p 1080:1080 mockserver/mockserver
+``
 
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)

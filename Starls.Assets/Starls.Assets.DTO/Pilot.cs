@@ -20,7 +20,7 @@ public class Pilot
 
     public string Homeworld { get; set; } = string.Empty;
 
-    public List<Movie> Movies { get; set; } = new();
+    public List<Film> Movies { get; set; } = new();
 
     public List<Specie> Species { get; set; } = new();
 

@@ -24,5 +24,5 @@ public class Planet
 
     public List<Character> Characteres { get; set; } = new();
 
-    public List<Movie> Movies { get; set; } = new();
+    public List<Film> Movies { get; set; } = new();
 }

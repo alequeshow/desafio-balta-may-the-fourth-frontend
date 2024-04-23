@@ -1,6 +1,6 @@
 ﻿namespace Starls.Assets.DTO;
 
-public class Movie
+public class Film
 {
     public int Id { get; set; }
 

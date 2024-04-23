@@ -22,7 +22,7 @@ public class Specie
 
     public string Language { get; set; } = string.Empty;
 
-    public List<Movie> Films { get; set; } = new ();
+    public List<Film> Films { get; set; } = new ();
 
     public DateTime Created { get; set; }
 

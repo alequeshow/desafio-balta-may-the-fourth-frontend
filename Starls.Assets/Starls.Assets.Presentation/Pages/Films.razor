@@ -1,0 +1,43 @@
+﻿@page "/films"
+@inject IFilmService Service
+
+<PageTitle>Filmses</PageTitle>
+
+<h1>Filmes</h1>
+
+<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+
+@if (films == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in films)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Film>? films;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var serviceResult = await Service.GetFilmsAsync();
+
+        films = serviceResult.ToList();
+    }
+}

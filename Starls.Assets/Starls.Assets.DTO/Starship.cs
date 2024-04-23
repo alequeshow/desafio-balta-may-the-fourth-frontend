@@ -26,7 +26,7 @@ public class Starship
 
     public string Class { get; set; } = string.Empty;
 
-    public List<Movie> Movies { get; set; } = new();
+    public List<Film> Movies { get; set; } = new();
 
   
 }
