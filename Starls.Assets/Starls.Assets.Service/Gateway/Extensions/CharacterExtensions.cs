@@ -2,16 +2,16 @@
 
 namespace Starls.Assets.Service.Gateway.Extensions
 {
-    internal static class CharacterExtensions
+    internal static class FilmExtensions
     {
-        internal static PagedContent<Character> ToDto(this PagedContent<SwApiResponseModel.Character> apiResponse)
+        internal static PagedContent<Film> ToDto(this PagedContent<SwApiResponseModel.Film> apiResponse)
         {
             if (apiResponse == null)
             {
                 return new();
             }
 
-            return new PagedContent<Character>
+            return new PagedContent<Film>
             {
                 Count = apiResponse.Count,
                 Next = apiResponse.Next,
@@ -20,16 +20,16 @@ namespace Starls.Assets.Service.Gateway.Extensions
             };
         }
 
-        internal static Character ToDto(this SwApiResponseModel.Character apiResponse)
+        internal static Film ToDto(this SwApiResponseModel.Film apiResponse)
         {
             if (apiResponse == null)
             {
                 return new();
             }
 
-            return new Character
+            return new Film
             {
-                Name = apiResponse.Name,
+                Title = apiResponse.Title,
             };
         }
     }
