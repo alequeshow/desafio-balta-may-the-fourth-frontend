@@ -27,4 +27,4 @@ Basta executar a requisição de PUT dela e esperar pelo status code `201 - Crea
 
 Os requests já estão configurados para resolver o problema de CORS (veja o http-header de response).
 
-É possivel também executar o commando via curl. Basta ver os comandos em `Curls.txt`
+É possivel também executar o commando via curl. Basta ver os comandos em [`Curls.txt`](Curls.txt)
