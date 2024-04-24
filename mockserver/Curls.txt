@@ -1,0 +1,124 @@
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/films/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"title\":\"The Rise of the Jedi\",\r\n      \"episode\":10,\r\n      \"openingCrawl\":\"After the fall of the Empire, the galaxy face\",\r\n      \"director\":\"Jana Doe\",\r\n      \"producer\":\"Leo Smith\",\r\n      \"releaseDate\":\"2028-12-15\",\r\n      \"characters\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Kara Zor-El\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Jaxxon T. Tumperakki\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Mara Jade\"\r\n         },\r\n         {\r\n            \"id\":4,\r\n            \"name\":\"Thrawn\"\r\n         },\r\n         {\r\n            \"id\":5,\r\n            \"name\":\"R2-D2\"\r\n         }\r\n      ],\r\n      \"planets\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Coruscant\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Tatooine\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Dagobah\"\r\n         }\r\n      ],\r\n      \"vehicles\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Speeder Bikes\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"AT-AT Walkers\"\r\n         }\r\n      ],\r\n      \"starships\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Millennium Falcon\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"X-wing\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"TIE Fighter\"\r\n         }\r\n      ]\r\n   },\r\n   {\r\n      \"title\":\"Revenge of the Sith\",\r\n      \"episode_id\":3,\r\n      \"opening_crawl\":\"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\r\n      \"director\":\"George Lucas\",\r\n      \"producer\":\"Rick McCallum\",\r\n      \"release_date\":\"2005-05-19\",\r\n      \"characters\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Luke Skywalker\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"C-3PO\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"R2-D2\"\r\n         },\r\n         {\r\n            \"id\":4,\r\n            \"name\":\"Darth Vader\"\r\n         }\r\n      ],\r\n      \"planets\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Alderaan\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Tatooine\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Yavin IV\"\r\n         }\r\n      ],\r\n      \"starships\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"CR90 corvette\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Droid control ship\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Jedi starfighter\"\r\n         }\r\n      ],\r\n      \"vehicles\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Vulture Droid\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Neimoidian shuttle\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
+
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/people/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"name\":\"Luke Skywalker\",\r\n      \"height\":\"172 cm\",\r\n      \"weight\":\"68 kg\",\r\n      \"hairColor\":\"black\",\r\n      \"skinColor\":\"tan\",\r\n      \"eyeColor\":\"green\",\r\n      \"birthYear\":\"242 ABY\",\r\n      \"gender\":\"male\",\r\n      \"planet\":{\r\n         \"id\":1,\r\n         \"title\":\"Tatooine\"\r\n      },\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Battle of the Stars\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Return of the Light\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Warriors of the Shadow Realm\"\r\n         }\r\n      ]\r\n   },\r\n   {\r\n      \"name\":\"Darth Vader\",\r\n      \"height\":\"202 cm\",\r\n      \"weight\":\"98 kg\",\r\n      \"hairColor\":\"none\",\r\n      \"skinColor\":\"white\",\r\n      \"eyeColor\":\"yellow\",\r\n      \"birthYear\":\"41.9BBY\",\r\n      \"gender\":\"male\",\r\n      \"planet\":{\r\n         \"id\":1,\r\n         \"title\":\"Tatooine\"\r\n      },\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Battle of the Stars\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Return of the Light\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Warriors of the Shadow Realm\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
+
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/planets/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"name\":\"Planetara\",\r\n      \"rotationPeriod\":\"24 hours\",\r\n      \"orbitalPeriod\":\"365 days\",\r\n      \"diameter\":\"12742 km\",\r\n      \"climate\":\"temperate\",\r\n      \"gravity\":\"1 standard\",\r\n      \"terrain\":\"forests, mountains, rivers\",\r\n      \"surfaceWater\":\"70%\",\r\n      \"population\":\"2 billion\",\r\n      \"characters\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"Zara Kell\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Tora Ziyal\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Finn Varra\"\r\n         }\r\n      ],\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Galactic Quest\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Rise of the Planetara\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Echoes of the Stars\"\r\n         }\r\n      ]\r\n   },\r\n   {\r\n      \"name\":\"Tatooine\",\r\n      \"rotationPeriod\":\"24 hours\",\r\n      \"orbitalPeriod\":\"365 days\",\r\n      \"diameter\":\"12742 km\",\r\n      \"climate\":\"temperate\",\r\n      \"gravity\":\"1 standard\",\r\n      \"terrain\":\"forests, mountains, rivers\",\r\n      \"surfaceWater\":\"70%\",\r\n      \"population\":\"2 billion\",\r\n      \"characters\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"Zara Kell\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Tora Ziyal\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Finn Varra\"\r\n         }\r\n      ],\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Galactic Quest\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Rise of the Planetara\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"title\":\"Echoes of the Stars\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
+
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/vehicles/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"name\":\"Star Voyager\",\r\n      \"model\":\"SV-2\",\r\n      \"manufacturer\":\"Galactic Starcraft\",\r\n      \"costInCredits\":\"500000\",\r\n      \"length\":\"120 meters\",\r\n      \"maxSpeed\":\"950 km/h\",\r\n      \"crew\":\"5\",\r\n      \"passengers\":\"30\",\r\n      \"cargoCapacity\":\"150000 kg\",\r\n      \"consumables\":\"2 years\",\r\n      \"class\":\"Cruiser\",\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Return of the Voyager\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Voyager'\''s Endgame\"\r\n         }\r\n      ]\r\n   },\r\n   {\r\n      \"name\":\"Vulture Droid\",\r\n      \"model\":\"VD-2\",\r\n      \"manufacturer\":\"Galactic Starcraft\",\r\n      \"costInCredits\":\"500000\",\r\n      \"length\":\"120 meters\",\r\n      \"maxSpeed\":\"950 km/h\",\r\n      \"crew\":\"5\",\r\n      \"passengers\":\"30\",\r\n      \"cargoCapacity\":\"150000 kg\",\r\n      \"consumables\":\"2 years\",\r\n      \"class\":\"Cruiser\",\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"The Return of the Voyager\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"Voyager'\''s Endgame\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
+
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/starships/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"name\":\"Galactic Explorer\",\r\n      \"model\":\"GX-3\",\r\n      \"manufacturer\":\"Interstellar Shipworks\",\r\n      \"costInCredits\":\"800000\",\r\n      \"length\":\"85 meters\",\r\n      \"maxSpeed\":\"880 km/h\",\r\n      \"crew\":\"10\",\r\n      \"passengers\":\"40\",\r\n      \"cargoCapacity\":\"200000 kg\",\r\n      \"hyperdriveRating\":\"1.5\",\r\n      \"mglt\":\"70\",\r\n      \"consumables\":\"6 months\",\r\n      \"class\":\"Explorer\",\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"Galactic Odyssey\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"The Edge of the Universe\"\r\n         }\r\n      ]\r\n   },\r\n   {\r\n      \"name\":\"Jedi starfighter\",\r\n      \"model\":\"JS-X\",\r\n      \"manufacturer\":\"Interstellar Shipworks\",\r\n      \"costInCredits\":\"800000\",\r\n      \"length\":\"85 meters\",\r\n      \"maxSpeed\":\"880 km/h\",\r\n      \"crew\":\"10\",\r\n      \"passengers\":\"40\",\r\n      \"cargoCapacity\":\"200000 kg\",\r\n      \"hyperdriveRating\":\"1.5\",\r\n      \"mglt\":\"70\",\r\n      \"consumables\":\"6 months\",\r\n      \"class\":\"Explorer\",\r\n      \"movies\":[\r\n         {\r\n            \"id\":1,\r\n            \"title\":\"Galactic Odyssey\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"title\":\"The Edge of the Universe\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
