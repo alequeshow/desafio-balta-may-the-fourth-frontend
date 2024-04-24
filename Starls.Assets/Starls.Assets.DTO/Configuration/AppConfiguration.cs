@@ -9,5 +9,6 @@ namespace Starls.Assets.DTO.Configuration
     public class AppConfiguration
     {
         public ProviderConfiguration FilmProviderConfiguration { get; set; }
+        public ProviderConfiguration PlanetProviderConfiguration { get; set; }
     }
 }
