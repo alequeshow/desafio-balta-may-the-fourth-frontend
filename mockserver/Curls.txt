@@ -1,0 +1,24 @@
+curl --location --request PUT 'http://localhost:1080/mockserver/expectation' \
+--header 'Content-Type: application/json' \
+--data '{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/api/films/"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "body": "[\r\n   {\r\n      \"title\":\"The Rise of the Jedi\",\r\n      \"episode\":10,\r\n      \"openingCrawl\":\"After the fall of the Empire, the galaxy face\",\r\n      \"director\":\"Jana Doe\",\r\n      \"producer\":\"Leo Smith\",\r\n      \"releaseDate\":\"2028-12-15\",\r\n      \"characters\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Kara Zor-El\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Jaxxon T. Tumperakki\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Mara Jade\"\r\n         },\r\n         {\r\n            \"id\":4,\r\n            \"name\":\"Thrawn\"\r\n         },\r\n         {\r\n            \"id\":5,\r\n            \"name\":\"R2-D2\"\r\n         }\r\n      ],\r\n      \"planets\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Coruscant\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"Tatooine\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"Dagobah\"\r\n         }\r\n      ],\r\n      \"vehicles\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Speeder Bikes\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"AT-AT Walkers\"\r\n         }\r\n      ],\r\n      \"starships\":[\r\n         {\r\n            \"id\":1,\r\n            \"name\":\"Millennium Falcon\"\r\n         },\r\n         {\r\n            \"id\":2,\r\n            \"name\":\"X-wing\"\r\n         },\r\n         {\r\n            \"id\":3,\r\n            \"name\":\"TIE Fighter\"\r\n         }\r\n      ]\r\n   }\r\n]",
+    "headers": [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "values": [
+          "*"
+        ]
+      }
+    ],
+    "delay": {
+      "timeUnit": "MILLISECONDS",
+      "value": 500
+    }
+  }
+}'
