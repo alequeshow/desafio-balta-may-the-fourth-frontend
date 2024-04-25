@@ -53,6 +53,10 @@ builder.Services.AddScoped<IVehicleService, VehicleService>();
 
 builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
 
+builder.Services.AddScoped<CharacterGateway, CharacterGateway>();
+
+builder.Services.AddScoped<ICharacterService, CharacterService>();
+
 
 
 await builder.Build().RunAsync();

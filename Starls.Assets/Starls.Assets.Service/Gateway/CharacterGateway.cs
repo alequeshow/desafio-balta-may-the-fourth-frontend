@@ -15,7 +15,7 @@ namespace Starls.Assets.Service.Gateway
             this.FilmProviderConfiguration = appConfiguration.FilmProviderConfiguration;
         }
 
-        public async Task<IEnumerable<Character>> ICharacterGateway()
+        public async Task<IEnumerable<Character>> GetCharacterAsync()
         {
             var urlPath = this.GetApiResourcePath(this.FilmProviderConfiguration.Resource);
 

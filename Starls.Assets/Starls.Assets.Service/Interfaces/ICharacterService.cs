@@ -4,6 +4,6 @@ namespace Starls.Assets.Service.Interfaces
 {
     public interface ICharacterService
     {
-        Task<IEnumerable<Character>> GetFilmsAsync();
+        Task<IEnumerable<Character>> GetCharacterAsync();
     }
 }
