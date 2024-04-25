@@ -34,18 +34,7 @@ Desenvolvimento de um App Web completo, fornecendo recursos como criação, leit
 
 ## 🧪 Como testar o projeto
 
-### Mockserver
-
-Para executar o projeto 100% local sem dependencias externas, utilizamos mockserver para simular as requisições externas
-
-
-#### Mockserver & Docker
-
-```
-docker pull mockserver/mockserver
-
-docker run -d --name mockserver --rm -p 1080:1080 mockserver/mockserver
-``
+Por enquanto, configurar o mockserver para simular as apis de backend descrito [aqui](mockserver\README.md)
 
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)
