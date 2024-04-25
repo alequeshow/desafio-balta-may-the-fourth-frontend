@@ -2,7 +2,7 @@
 using Starls.Assets.Service.Gateway.Interfaces;
 using Starls.Assets.Service.Interfaces;
 
-namespace Starls.Assets.Service.Gateway
+namespace Starls.Assets.Service
 {
     public class VehicleService : IVehicleService
     {
