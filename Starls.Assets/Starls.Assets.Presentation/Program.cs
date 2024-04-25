@@ -47,15 +47,22 @@ builder.Services.AddScoped<IFilmGateway, FilmGateway>();
 
 builder.Services.AddScoped<IVehicleGateway, VehicleGateway>();
 
+builder.Services.AddScoped<ICharacterGateway, CharacterGateway>();
+
+builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
+
+
 builder.Services.AddScoped<IFilmService, FilmService>();
 
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 
-builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
-
-builder.Services.AddScoped<CharacterGateway, CharacterGateway>();
+builder.Services.AddScoped<IPlanetService, PlanetService>();
 
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+
+
+
+
 
 
 
