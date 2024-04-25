@@ -8,5 +8,7 @@
       
         public ProviderConfiguration PlanetProviderConfiguration { get; set; }
 
+        public ProviderConfiguration SpecieProviderConfiguration { get; set; }
+
     }
 }

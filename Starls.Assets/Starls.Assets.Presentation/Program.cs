@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Starls.Assets.DTO.Configuration;
 using Starls.Assets.Presentation;
 using Starls.Assets.Service;
@@ -36,6 +37,11 @@ builder.Services.AddHttpClient(configuration.PlanetProviderConfiguration.Name, c
     client.BaseAddress = new Uri(configuration.PlanetProviderConfiguration.Url);
 });
 
+builder.Services.AddHttpClient(configuration.SpecieProviderConfiguration.Name, client =>
+{
+    client.BaseAddress = new Uri(configuration.SpecieProviderConfiguration.Url);
+});
+
 builder.Services.AddHttpClient("SwApi.Starships", client =>
 {
     client.BaseAddress = new Uri("http://localhost:1080");
@@ -44,14 +50,16 @@ builder.Services.AddHttpClient("SwApi.Starships", client =>
 
 builder.Services.AddScoped<IFilmGateway, FilmGateway>();
 
+builder.Services.AddScoped<ISpecieGateway, SpecieGateway>();
+
 builder.Services.AddScoped<IVehicleGateway, VehicleGateway>();
-
-builder.Services.AddScoped<IFilmService, FilmService>();
-
-builder.Services.AddScoped<IVehicleService, VehicleService>();
 
 builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
 
+builder.Services.AddScoped<IFilmService, FilmService>();
 
+builder.Services.AddScoped<ISpecieService, SpecieService>();
+
+builder.Services.AddScoped<IVehicleService, VehicleService>();
 
 await builder.Build().RunAsync();
