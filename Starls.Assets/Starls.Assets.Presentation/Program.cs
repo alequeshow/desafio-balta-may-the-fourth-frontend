@@ -26,9 +26,9 @@ builder.Services.AddHttpClient("SwApi.Characters", client =>
     client.BaseAddress = new Uri("http://localhost:1080");
 });
 
-builder.Services.AddHttpClient("SwApi.Vehicles", client =>
+builder.Services.AddHttpClient(configuration.VehicleProviderConfiguration.Name, client =>
 {
-    client.BaseAddress = new Uri("http://localhost:1080");
+    client.BaseAddress = new Uri(configuration.VehicleProviderConfiguration.Url);
 });
 
 builder.Services.AddHttpClient(configuration.PlanetProviderConfiguration.Name, client =>
@@ -41,12 +41,17 @@ builder.Services.AddHttpClient("SwApi.Starships", client =>
     client.BaseAddress = new Uri("http://localhost:1080");
 });
 
-// Add here Gateways implementaitons
+
 builder.Services.AddScoped<IFilmGateway, FilmGateway>();
+
+builder.Services.AddScoped<IVehicleGateway, VehicleGateway>();
+
+builder.Services.AddScoped<IFilmService, FilmService>();
+
+builder.Services.AddScoped<IVehicleService, VehicleService>();
+
 builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
 
-// Add here Services implementations
-builder.Services.AddScoped<IFilmService, FilmService>();
-builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
+
 
 await builder.Build().RunAsync();
