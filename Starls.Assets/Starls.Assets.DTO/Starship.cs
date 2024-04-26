@@ -16,13 +16,13 @@ public class Starship
 
     public decimal MaxSpeed { get; set; } 
 
-    public int Crew { get; set; }
+    public string Crew { get; set; } = string.Empty;
 
-    public int Passengers { get; set; }
+    public string Passengers { get; set; } = string.Empty;
 
-    public int CargoCapacity { get; set; }
+    public string CargoCapacity { get; set; } = string.Empty;
 
-    public int Consumables { get; set; }
+    public string Consumables { get; set; } = string.Empty;
 
     public string Class { get; set; } = string.Empty;
 
