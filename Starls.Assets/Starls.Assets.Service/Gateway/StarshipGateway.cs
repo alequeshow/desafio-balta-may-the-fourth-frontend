@@ -10,9 +10,9 @@ namespace Starls.Assets.Service.Gateway
         private readonly ProviderConfiguration StarshipProviderConfiguration;
 
         public StarshipGateway(IHttpClientFactory httpClientFactory, AppConfiguration appConfiguration) :
-            base(httpClientFactory, appConfiguration.SharshipProviderConfiguration.Name)
+            base(httpClientFactory, appConfiguration.StarshipProviderConfiguration.Name)
         {
-            this.StarshipProviderConfiguration = appConfiguration.SharshipProviderConfiguration;
+            this.StarshipProviderConfiguration = appConfiguration.StarshipProviderConfiguration;
         }
 
         public async Task<IEnumerable<Starship>> GetStarshipsAsync()
