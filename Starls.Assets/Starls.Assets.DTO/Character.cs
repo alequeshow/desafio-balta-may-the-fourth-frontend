@@ -4,26 +4,25 @@
     {
         public string Name { get; set; } = string.Empty;
 
-        public string Height { get; set; }
+        public decimal Height { get; set; }
 
-        public string Mass { get; set; }
+        public decimal Mass { get; set; }
 
-        public string Hair_Color { get; set; } = string.Empty;
+        public string HairColor { get; set; } = string.Empty;
 
-        public string Skin_Color { get; set; } = string.Empty;
+        public string SkinColor { get; set; } = string.Empty;
 
-        public string Eye_Color { get; set; } = string.Empty;
+        public string EyeColor { get; set; } = string.Empty;
 
-        public string Birth_Year { get; set; } = string.Empty;
+        public string BirthYear { get; set; } = string.Empty;
 
         public string Gender { get; set; } = string.Empty;
 
-        public string Homeworld { get; set; } = string.Empty;
+        public List<Planet> Planets { get; set; } = new();
 
-        public List<string> Films { get; set; } = new();
+        public List<Film> Movies { get; set; } = new();
 
-        public List<string> Vehicles { get; set; } = new();
 
-      //  public List<Starship> Starships { get; set; } = new();
+        //  public List<Starship> Starships { get; set; } = new();
     }
 }
