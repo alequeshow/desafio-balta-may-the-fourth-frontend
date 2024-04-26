@@ -1,6 +1,4 @@
-﻿using Starls.Assets.DTO;
-
-namespace Starls.Assets.Service.Gateway.SwApiResponseModel
+﻿namespace Starls.Assets.Service.Gateway.SwApiResponseModel
 {
     public class Planet
     {
