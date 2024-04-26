@@ -46,12 +46,14 @@ builder.Services.AddScoped<IFilmGateway, FilmGateway>();
 
 builder.Services.AddScoped<IVehicleGateway, VehicleGateway>();
 
+builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
+
+
 builder.Services.AddScoped<IFilmService, FilmService>();
 
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 
-builder.Services.AddScoped<IPlanetGateway, PlanetGateway>();
-
+builder.Services.AddScoped<IPlanetService, PlanetService>();
 
 
 await builder.Build().RunAsync();
