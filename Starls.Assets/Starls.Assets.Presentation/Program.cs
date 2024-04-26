@@ -61,9 +61,4 @@ builder.Services.AddScoped<IPlanetService, PlanetService>();
 builder.Services.AddScoped<ICharacterService, CharacterService>();
 
 
-
-
-
-
-
 await builder.Build().RunAsync();
