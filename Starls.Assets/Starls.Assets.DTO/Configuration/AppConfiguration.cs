@@ -8,6 +8,8 @@
       
         public ProviderConfiguration PlanetProviderConfiguration { get; set; }
 
+        public ProviderConfiguration SharshipProviderConfiguration { get; set; }
+      
         public ProviderConfiguration CharacterProviderConfiguration { get; set; }
 
     }

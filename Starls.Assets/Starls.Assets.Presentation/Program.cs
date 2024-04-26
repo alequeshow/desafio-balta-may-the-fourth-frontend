@@ -37,9 +37,9 @@ builder.Services.AddHttpClient(configuration.PlanetProviderConfiguration.Name, c
     client.BaseAddress = new Uri(configuration.PlanetProviderConfiguration.Url);
 });
 
-builder.Services.AddHttpClient("SwApi.Starships", client =>
+builder.Services.AddHttpClient(configuration.SharshipProviderConfiguration.Name, client => 
 {
-    client.BaseAddress = new Uri("http://localhost:1080");
+    client.BaseAddress = new Uri(configuration.SharshipProviderConfiguration.Url);
 });
 
 
