@@ -16,6 +16,7 @@ else
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Título</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@ else
             @foreach (var item in films)
             {
                 <tr>
+                    <td><img src="@item.ImageUrl" width="50" height="50"/></td>
                     <td>@item.Title</td>
                 </tr>
             }

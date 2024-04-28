@@ -19,11 +19,25 @@ namespace Starls.Assets.Service.Gateway
         {
             var urlPath = this.GetApiResourcePath(this.FilmProviderConfiguration.Resource);
 
+            if (this.FilmProviderConfiguration.UseSwApiContract)
+            {
+                if (this.FilmProviderConfiguration.Paginated)
+                {
+                    var swApiPagedResult = await this.GetPagedAsync<SwApiResponseModel.Film>(urlPath);
+
+                    return swApiPagedResult.ToDto().Results;
+                }
+                else
+                {
+                    throw new Exception($"SwAPI only implements paginated response, review the {nameof(this.FilmProviderConfiguration)} pagination settings");
+                }
+            }
+
             if (this.FilmProviderConfiguration.Paginated)
             {
-                var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Film>(urlPath);
+                var pagedResult = await this.GetPagedAsync<Film>(urlPath);
 
-                return pagedResult.ToDto().Results;
+                return pagedResult.Results ?? [];
             }
 
             var result = await this.GetManyAsync<Film>(urlPath);
