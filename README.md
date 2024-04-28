@@ -34,7 +34,7 @@ Desenvolvimento de um App Web completo, fornecendo recursos como criação, leit
 
 ## 🧪 Como testar o projeto
 
-Por enquanto, configurar o mockserver para simular as apis de backend descrito [aqui](mockserver\README.md)
+Por enquanto, configurar o mockserver para simular as apis de backend descrito [aqui](mockserver/README.md)
 
 # 💜 Participe
 Quer participar dos próximos desafios? Junte-se a [maior comunidade .NET do Brasil 🇧🇷 💜](https://balta.io/discord)
