@@ -24,6 +24,7 @@ else
             @foreach (var item in planets)
             {
                 <tr>
+                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
                     <td>@item.Name</td>
                 </tr>
             }
@@ -41,7 +42,16 @@ else
         {
             var serviceResult = await Service.GetPlanetsAsync();
 
-            planets = serviceResult.ToList();
+            var list = serviceResult.ToList();
+
+            list.ForEach(c =>
+            {
+                var filteredUrl = c.ImageUrl.Split("/revision/");
+                c.ImageUrl = filteredUrl[0];
+            });
+
+
+            planets = list;
 
         }
         catch (Exception ex)
