@@ -18,6 +18,8 @@
 
         public string Gender { get; set; } = string.Empty;
 
+        public string ImageUrl { get; set; } = string.Empty;
+
         public List<Planet> Planets { get; set; } = new();
 
         public List<Film> Movies { get; set; } = new();

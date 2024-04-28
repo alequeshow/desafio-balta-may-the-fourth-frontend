@@ -1,0 +1,63 @@
+﻿@page "/planets"
+@inject IPlanetService Service
+
+<PageTitle>Planetas</PageTitle>
+
+<h1>Planetas</h1>
+
+<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+
+@if (planets == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in planets)
+            {
+                <tr>
+                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Planet>? planets;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        try
+        {
+            var serviceResult = await Service.GetPlanetsAsync();
+
+            var list = serviceResult.ToList();
+
+            list.ForEach(c =>
+            {
+                var filteredUrl = c.ImageUrl.Split("/revision/");
+                c.ImageUrl = filteredUrl[0];
+            });
+
+
+            planets = list;
+
+        }
+        catch (Exception ex)
+        {
+
+            Console.WriteLine(ex.Message);
+        }
+    }
+}

@@ -1,7 +1,7 @@
 ﻿@page "/films"
 @inject IFilmService Service
 
-<PageTitle>Filmses</PageTitle>
+<PageTitle>Filmes</PageTitle>
 
 <h1>Filmes</h1>
 
@@ -13,22 +13,20 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in films)
-            {
-                <tr>
-                    <td>@item.Title</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row g-5">
+        @foreach (var item in films)
+        {
+            <DefaultCard 
+                ImageUrl="@item.ImageUrl"
+                Title="@item.Title"
+                GroupItemLabel1="Lançamento"
+                GroupItemValue1="@item.ReleaseDate.ToString("y")"
+                GroupItemLabel2="Episódio"
+                GroupItemValue2="@item.Episode.ToString()"
+                CardDescription="@item.OpeningCrawl"
+            />
+        }
+    </div>
 }
 
 @code {

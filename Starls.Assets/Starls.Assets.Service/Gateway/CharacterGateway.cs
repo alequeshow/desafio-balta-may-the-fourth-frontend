@@ -19,11 +19,26 @@ namespace Starls.Assets.Service.Gateway
         {
             var urlPath = this.GetApiResourcePath(this.CharacterProviderConfiguration.Resource);
 
+
+            if (this.CharacterProviderConfiguration.UseSwApiContract)
+            {
+                if (this.CharacterProviderConfiguration.Paginated)
+                {
+                    var swApiPagedResult = await this.GetPagedAsync<SwApiResponseModel.Character>(urlPath);
+
+                    return swApiPagedResult.ToDto().Results;
+                }
+                else
+                {
+                    throw new Exception($"SwAPI only implements paginated response, review the {nameof(this.CharacterProviderConfiguration)} pagination settings");
+                }
+            }
+
             if (this.CharacterProviderConfiguration.Paginated)
             {
-                var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Character>(urlPath);
+                var pagedResult = await this.GetPagedAsync<Character>(urlPath);
 
-                return pagedResult.ToDto().Results;
+                return pagedResult.Results ?? [];
             }
 
             var result = await this.GetManyAsync<Character>(urlPath);

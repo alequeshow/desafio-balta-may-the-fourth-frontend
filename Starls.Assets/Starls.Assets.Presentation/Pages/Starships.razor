@@ -1,0 +1,61 @@
+﻿@page "/starships"
+@inject IStarshipService Service
+
+<PageTitle>Starships</PageTitle>
+
+<h1>Starships</h1>
+
+<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+
+@if (starships == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in starships)
+            {
+                <tr>
+                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Starship>? starships;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var serviceResult = await Service.GetStarshipsAsync();
+
+            var list = serviceResult.ToList();
+
+            list.ForEach(c =>
+            {
+                var filteredUrl = c.ImageUrl.Split("/revision/");
+                c.ImageUrl = filteredUrl[0];
+            });
+
+            starships = list;
+        }
+        catch (Exception ex)
+        {
+            
+            throw;
+        }
+ 
+    }
+}

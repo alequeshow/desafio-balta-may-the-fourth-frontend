@@ -10,22 +10,24 @@
 
         public string ManuFacturer { get; set; } = string.Empty;
 
-        public decimal CostInCredits { get; set; }
+        public string CostInCredits { get; set; } = string.Empty;
 
-        public decimal Length { get; set; }
+        public string Length { get; set; } = string.Empty;
 
-        public decimal MaxSpeed { get; set; }
+        public string MaxSpeed { get; set; } = string.Empty;
 
-        public int Crew { get; set; }
+        public string Crew { get; set; } = string.Empty;
 
-        public int Passengers { get; set; }
+        public string Passengers { get; set; } = string.Empty;
 
-        public int CargoCapacity { get; set; }
+        public string CargoCapacity { get; set; } = string.Empty;
 
-        public int Consumables { get; set; }
+        public string Consumables { get; set; } = string.Empty;
 
         public string Class { get; set; } = string.Empty;
 
-        public List<string> Movies { get; set; } = new();
+        public string ImageUrl { get; set; } = string.Empty;
+
+        public List<Film> Movies { get; set; } = new();
     }
 }

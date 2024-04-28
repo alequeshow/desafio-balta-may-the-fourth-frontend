@@ -6,21 +6,23 @@ public class Planet
 
     public string Name { get; set; } = string.Empty;
 
-    public decimal RotationPeriod { get; set; }
+    public string RotationPeriod { get; set; } = string.Empty;
 
-    public int OrbitalPeriod { get; set; }
+    public int OrbitalPeriod { get; set; } 
 
-    public decimal Diameter { get; set; }
+    public string Diameter { get; set; } = string.Empty;
 
     public string Climate { get; set; } = string.Empty;
 
-    public decimal Gravity { get; set; }
+    public string Gravity { get; set; } = string.Empty;
 
     public string Terrain { get; set; } = string.Empty;
 
-    public decimal SurfaceWater { get; set; }
+    public string SurfaceWater { get; set; } = string.Empty;
 
-    public decimal Population { get; set; }
+    public string Population { get; set; } = string.Empty;
+
+    public string ImageUrl { get; set; } = string.Empty;
 
     public List<Character> Characteres { get; set; } = new();
 
