@@ -7,23 +7,37 @@ namespace Starls.Assets.Service.Gateway
 {
     public class CharacterGateway : BaseGateway, ICharacterGateway
     {
-        private readonly ProviderConfiguration FilmProviderConfiguration;
+        private readonly ProviderConfiguration CharacterProviderConfiguration;
 
         public CharacterGateway(IHttpClientFactory httpClientFactory, AppConfiguration appConfiguration) :
-            base(httpClientFactory, appConfiguration.FilmProviderConfiguration.Name)
+            base(httpClientFactory, appConfiguration.CharacterProviderConfiguration.Name)
         {
-            this.FilmProviderConfiguration = appConfiguration.FilmProviderConfiguration;
+            this.CharacterProviderConfiguration = appConfiguration.CharacterProviderConfiguration;
         }
 
         public async Task<IEnumerable<Character>> GetCharacterAsync()
         {
-            var urlPath = this.GetApiResourcePath(this.FilmProviderConfiguration.Resource);
+            var urlPath = this.GetApiResourcePath(this.CharacterProviderConfiguration.Resource);
 
-            if (this.FilmProviderConfiguration.Paginated)
+            if (this.CharacterProviderConfiguration.UseSwApiContract)
             {
-                var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Character>(urlPath);
+                if (this.CharacterProviderConfiguration.Paginated)
+                {
+                    var swApiPagedResult = await this.GetPagedAsync<SwApiResponseModel.Character>(urlPath);
 
-                return pagedResult.ToDto().Results;
+                    return swApiPagedResult.ToDto().Results;
+                }
+                else
+                {
+                    throw new Exception($"SwAPI only implements paginated response, review the {nameof(this.CharacterProviderConfiguration)} pagination settings");
+                }
+            }
+
+            if (this.CharacterProviderConfiguration.Paginated)
+            {
+                var pagedResult = await this.GetPagedAsync<Character>(urlPath);
+
+                return pagedResult.Results ?? [];
             }
 
             var result = await this.GetManyAsync<Character>(urlPath);

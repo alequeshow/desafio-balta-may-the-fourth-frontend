@@ -24,6 +24,7 @@ else
             @foreach (var item in starships)
             {
                 <tr>
+                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
                     <td>@item.Name</td>
                 </tr>
             }
@@ -40,7 +41,15 @@ else
         {
             var serviceResult = await Service.GetStarshipsAsync();
 
-            starships = serviceResult.ToList();
+            var list = serviceResult.ToList();
+
+            list.ForEach(c =>
+            {
+                var filteredUrl = c.ImageUrl.Split("/revision/");
+                c.ImageUrl = filteredUrl[0];
+            });
+
+            starships = list;
         }
         catch (Exception ex)
         {

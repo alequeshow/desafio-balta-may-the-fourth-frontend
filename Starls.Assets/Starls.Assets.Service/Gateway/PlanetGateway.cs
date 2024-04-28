@@ -18,11 +18,25 @@ namespace Starls.Assets.Service.Gateway
         {
             string urlPath = this.GetApiResourcePath(this.PlanetProviderConfiguration.Resource);
 
+            if (this.PlanetProviderConfiguration.UseSwApiContract)
+            {
+                if (this.PlanetProviderConfiguration.Paginated)
+                {
+                    var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Planet>(urlPath);
+
+                    return pagedResult.ToDto().Results;
+                }
+                else
+                {
+                    throw new Exception($"SwAPI only implements paginated response, review the {nameof(this.PlanetProviderConfiguration)} pagination settings");
+                }
+            }
+
             if (this.PlanetProviderConfiguration.Paginated)
             {
-                var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Planet>(urlPath);
+                var pagedResult = await this.GetPagedAsync<Planet>(urlPath);
 
-                return pagedResult.ToDto().Results;
+                return pagedResult.Results ?? [];
             }
 
             var result = await this.GetManyAsync<Planet>(urlPath);
