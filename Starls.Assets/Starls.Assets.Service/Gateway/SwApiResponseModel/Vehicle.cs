@@ -26,6 +26,8 @@
 
         public string Class { get; set; } = string.Empty;
 
+        public string ImageUrl { get; set; } = string.Empty;
+
         public List<Film> Movies { get; set; } = new();
     }
 }

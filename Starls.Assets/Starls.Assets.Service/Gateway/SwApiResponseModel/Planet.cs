@@ -22,7 +22,7 @@
 
         public string Population { get; set; } = string.Empty;
 
-        public List<Character> Characteres { get; set; } = new();
+        public List<Starship> Characteres { get; set; } = new();
 
         public List<Film> Movies { get; set; } = new();
     }
