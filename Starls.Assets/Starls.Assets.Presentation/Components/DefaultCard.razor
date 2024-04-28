@@ -1,0 +1,39 @@
+﻿<div class="col-sm-4">
+    <div class="card">
+        <img src="@ImageUrl" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">@Title</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@GroupItemLabel1: @GroupItemValue1</li>
+            <li class="list-group-item">@GroupItemLabel2: @GroupItemValue2</li>
+        </ul>
+        <div class="card-body">
+            <small>@CardDescription</small>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string ImageUrl { get; set; } = "~/images/starls_01.png";
+
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string GroupItemLabel1 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string GroupItemValue1 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string GroupItemLabel2 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string GroupItemValue2 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string CardDescription { get; set; } = string.Empty;
+
+}

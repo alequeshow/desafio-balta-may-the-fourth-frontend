@@ -13,24 +13,20 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in films)
-            {
-                <tr>
-                    <td><img src="@item.ImageUrl" width="50" height="50"/></td>
-                    <td>@item.Title</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row g-5">
+        @foreach (var item in films)
+        {
+            <DefaultCard 
+                ImageUrl="@item.ImageUrl"
+                Title="@item.Title"
+                GroupItemLabel1="Lançamento"
+                GroupItemValue1="@item.ReleaseDate.ToString("y")"
+                GroupItemLabel2="Episódio"
+                GroupItemValue2="@item.Episode.ToString()"
+                CardDescription="@item.OpeningCrawl"
+            />
+        }
+    </div>
 }
 
 @code {
