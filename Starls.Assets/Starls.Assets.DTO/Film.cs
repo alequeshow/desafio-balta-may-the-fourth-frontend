@@ -14,7 +14,7 @@ public class Film
 
     public string Producer { get; set; } = string.Empty;
 
-    public DateTime ReleaseDAte { get; set; }
+    public DateTime ReleaseDate { get; set; }
 
     public string ImageUrl { get; set; } = string.Empty;
 

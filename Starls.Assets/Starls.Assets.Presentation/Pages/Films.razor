@@ -13,24 +13,26 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in films)
-            {
-                <tr>
-                    <td><img src="@item.ImageUrl" width="50" height="50"/></td>
-                    <td>@item.Title</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row g-5">
+        @foreach (var item in films)
+        {
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="@item.ImageUrl" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>                        
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Lançamento: @item.ReleaseDate.ToString("y")</li>
+                        <li class="list-group-item">Episódio #@item.Episode</li>
+                    </ul>
+                    <div class="card-body">
+                        <small>@item.OpeningCrawl</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 }
 
 @code {
