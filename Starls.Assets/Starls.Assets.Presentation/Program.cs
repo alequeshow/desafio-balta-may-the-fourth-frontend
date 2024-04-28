@@ -67,4 +67,6 @@ builder.Services.AddScoped<ICharacterService, CharacterService>();
 
 builder.Services.AddScoped<IStarshipService, StarshipService>();
 
+
+
 await builder.Build().RunAsync();

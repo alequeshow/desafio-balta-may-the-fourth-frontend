@@ -10,19 +10,19 @@ public class Starship
 
     public string ManuFacturer { get; set; } = string.Empty;
 
-    public decimal CostInCredits { get; set; } 
+    public string CostInCredits { get; set; } 
 
-    public decimal Length { get; set; } 
+    public string Length { get; set; } 
 
-    public decimal MaxSpeed { get; set; } 
+    public string MaxSpeed { get; set; } 
 
-    public int Crew { get; set; }
+    public string Crew { get; set; } = string.Empty;
 
-    public int Passengers { get; set; }
+    public string Passengers { get; set; } = string.Empty;
 
-    public int CargoCapacity { get; set; }
+    public string CargoCapacity { get; set; } = string.Empty;
 
-    public int Consumables { get; set; }
+    public string Consumables { get; set; } = string.Empty;
 
     public string Class { get; set; } = string.Empty;
 
