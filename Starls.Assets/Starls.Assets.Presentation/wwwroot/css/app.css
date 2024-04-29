@@ -161,3 +161,9 @@ body {
         text-decoration: none;
         margin-left: 10px;
     }
+.img-card-menu-superior {
+    width: 250px;
+    height: 57px;
+    margin-top: -14px;
+    margin-left: -30px;
+}
