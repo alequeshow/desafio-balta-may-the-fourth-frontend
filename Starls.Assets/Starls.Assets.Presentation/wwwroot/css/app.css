@@ -180,3 +180,14 @@ body {
 .sidebar{
     opacity:0.8 !important;
 }
+
+.card-black-opacity {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+}
+
+.list-group-item-black {
+    background-color: black !important;
+    color: white !important;
+}

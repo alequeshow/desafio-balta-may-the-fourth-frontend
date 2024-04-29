@@ -1,3 +1,7 @@
 \.vs
 \bin
 \obj
+/Starls.Assets/Starls.Assets.Presentation/Pages/People.razor
+/Starls.Assets/Starls.Assets.Presentation/Pages/Planets.razor
+/Starls.Assets/Starls.Assets.Presentation/Pages/Starships.razor
+/Starls.Assets/Starls.Assets.Presentation/Pages/Vehicles.razor
