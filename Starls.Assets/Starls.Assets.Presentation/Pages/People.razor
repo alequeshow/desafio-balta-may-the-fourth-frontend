@@ -12,25 +12,19 @@
 }
 else
 {
+     <div class="row g-5">
+        @foreach (var item in chars)
+        {
+            <DefaultCard ImageUrl="@item.ImageUrl"
+                         Title="@item.Name"
+                         GroupItemLabel1="Altura (cm)"
+                         GroupItemValue1="@item.Height.ToString()"
+                         GroupItemLabel2="Peso (kg)"
+                         GroupItemValue2="@item.Mass.ToString()"
+                         CardDescription="" />
+        }
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in chars)
-            {
-                <tr>
-                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
-                    <td>@item.Name</td>
-                </tr>
-            }
-        </tbody>
-    </table>
 }
 
 @code {

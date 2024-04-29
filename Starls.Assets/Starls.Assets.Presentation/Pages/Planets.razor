@@ -13,23 +13,18 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in planets)
-            {
-                <tr>
-                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
-                    <td>@item.Name</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row g-5">
+        @foreach (var item in planets)
+        {
+            <DefaultCard ImageUrl="@item.ImageUrl"
+                Title="@item.Name"
+                GroupItemLabel1="Gravidade"
+                GroupItemValue1="@item.Gravity"
+                GroupItemLabel2="Clima"
+                GroupItemValue2="@item.Climate"
+                         CardDescription="" />
+        }
+    </div>
 }
 
 @code {

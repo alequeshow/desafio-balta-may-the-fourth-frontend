@@ -101,3 +101,7 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+.card-img-top{
+    max-height:350px;
+    min-height: 350px;
+}
