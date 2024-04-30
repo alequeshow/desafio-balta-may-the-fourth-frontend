@@ -101,3 +101,93 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.h1-titulo, .p-titulo {
+    color: white !important;
+}
+
+/**/
+body {
+    margin: 0;
+    /*    overflow: hidden;*/
+    position: relative;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o fundo atrás de tudo */
+}
+
+#blazorContainer {
+    position: relative;
+    z-index: 1; /* Coloca a estrutura do Blazor na frente do fundo */
+}
+
+/* Estilos para a animação de carregamento */
+.loading-progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+#blazor-error-ui {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    #blazor-error-ui a {
+        color: #333;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+.img-card-menu-superior {
+    width: 250px;
+    height: 57px;
+    margin-top: -14px;
+    margin-left: -30px;
+}
+
+.background-black-font-yellow-opacity {
+    background-color: black !important;
+    color: yellow !important;
+    opacity: 0.7;
+}
+    .background-black-font-yellow-opacity > a {
+        color: yellow !important;
+    }
+
+.sidebar{
+    opacity:0.8 !important;
+}
+
+.card-black-opacity {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+}
+
+.list-group-item-black {
+    background-color: black !important;
+    color: white !important;
+}
