@@ -1,0 +1,54 @@
+﻿@page "/pessoas"
+@page "/people"
+@page "/characters"
+@page "/p"
+@inject ICharacterService Service
+
+<PageTitle>Pessoas</PageTitle>
+
+<h1>Pessoas</h1>
+
+<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+
+@if (characters == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in characters)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Character>? characters;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var serviceResult = await Service.GetCharacterAsync();
+
+            characters = serviceResult.ToList();
+        }
+        catch (Exception ex)
+        {
+
+            Console.WriteLine(ex.Message);
+        }
+    }
+}

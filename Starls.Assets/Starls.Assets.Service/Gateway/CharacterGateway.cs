@@ -19,6 +19,7 @@ namespace Starls.Assets.Service.Gateway
         {
             var urlPath = this.GetApiResourcePath(this.CharacterProviderConfiguration.Resource);
 
+
             if (this.CharacterProviderConfiguration.UseSwApiContract)
             {
                 if (this.CharacterProviderConfiguration.Paginated)

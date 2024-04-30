@@ -24,5 +24,7 @@
 
         public List<Film> Movies { get; set; } = new();
 
+
+        //  public List<Starship> Starships { get; set; } = new();
     }
 }
