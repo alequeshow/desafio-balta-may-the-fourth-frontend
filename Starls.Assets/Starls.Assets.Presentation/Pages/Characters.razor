@@ -6,9 +6,9 @@
 
 <PageTitle>Pessoas</PageTitle>
 
-<h1>Pessoas</h1>
+<h1 class="h1-titulo">Pessoas</h1>
 
-<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+<p class="p-titulo">Confira a lista de sucessos de uma galaxia tão tão distante...</p>
 
 @if (characters == null)
 {
@@ -16,22 +16,19 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
 
-            @foreach (var item in characters)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row g-5">
+        @foreach (var item in characters)
+        {
+            <DefaultCard ImageUrl="@item.ImageUrl"
+                         Title="@item.Name"
+                         GroupItemLabel1="Peso (kg)"
+                         GroupItemValue1="@item.Mass.ToString()"
+                         GroupItemLabel2="Altura (cm)"
+                         GroupItemValue2="@item.Height.ToString()"
+                         CardDescription="" />
+        }
+    </div>
 }
 
 @code {

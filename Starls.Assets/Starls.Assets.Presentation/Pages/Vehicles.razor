@@ -3,9 +3,9 @@
 
 <PageTitle>Vehicles</PageTitle>
 
-<h1>Vehicles</h1>
+<h1 class="h1-titulo">Vehicles</h1>
 
-<p>Confira a lista de sucessos de uma galaxia tão tão distante...</p>
+<p class="p-titulo">Confira a lista de sucessos de uma galaxia tão tão distante...</p>
 
 @if (vehicles == null)
 {
@@ -13,23 +13,18 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Título</th>
-            </tr>
-        </thead>
-        <tbody>
-
+        <div class="row g-5">
             @foreach (var item in vehicles)
             {
-                <tr>
-                    <td><img src="@item.ImageUrl" width="100" height="100" /></td>
-                    <td>@item.Name</td>
-                </tr>
+                <DefaultCard ImageUrl="@item.ImageUrl"
+                             Title="@item.Name"
+                             GroupItemLabel1="Modelo"
+                             GroupItemValue1="@item.Model"
+                             GroupItemLabel2="Fabricante"
+                             GroupItemValue2="@item.ManuFacturer"
+                             CardDescription="" />
             }
-        </tbody>
-    </table>
+            </div>
 }
 
 @code {
