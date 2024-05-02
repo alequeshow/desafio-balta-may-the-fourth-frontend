@@ -111,6 +111,7 @@ body {
     margin: 0;
     /*    overflow: hidden;*/
     position: relative;
+    cursor: none;
 }
 
 #background {
@@ -181,11 +182,7 @@ body {
     opacity:0.8 !important;
 }
 
-.card-black-opacity {
-    background-color: black;
-    color: white;
-    opacity: 0.8;
-}
+
 
 .list-group-item-black {
     background-color: black !important;
@@ -194,3 +191,44 @@ body {
 .card-img-top {
     height: 500px !important;
 }
+
+.star-wars-cursor {
+    width: 52px;
+    height: 52px;
+    background-image: url('../images/cursor3.png');
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.trail {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.7) 80%, rgba(255, 0, 0, 0.9) 100%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+.nav-item :hover{
+    cursor:none;
+}
+
+.card-black-opacity {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+    .card-black-opacity:hover {
+        opacity: 1;
+        border-color: white;
+        transition-delay: 0.3s;
+    }
+
