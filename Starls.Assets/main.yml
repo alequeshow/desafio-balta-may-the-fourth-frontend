@@ -34,13 +34,13 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore  Starls.Assets/
 
       - name: Build
-        run: dotnet build -c Release --no-restore
+        run: dotnet build -c Release Starls.Assets --no-restore
 
       - name: Publish .NET
-        run: dotnet publish Starls.Assets.csproj -c:Release -o docs --nologo
+        run: dotnet publish Starls.Assets/Starls.Assets.Presentation/Starls.Assets.Presentation.csproj  -c:Release -o docs --nologo
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
